@@ -17,6 +17,7 @@ import { ChangeFilterAction } from './../actions/searchFilter.actions';
 export class NavbarComponent implements OnInit {
   title = 'PokéApp';
   isComparing: boolean;
+  isCollapsed = true;
 
   constructor(
     private comparisonInfoStore: Store<ComparisonInfoAppState>,

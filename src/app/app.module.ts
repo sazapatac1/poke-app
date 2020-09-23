@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 //services
 import { HttpService } from './services/http/http.service';
@@ -56,6 +58,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot({
@@ -68,6 +71,7 @@ const routes: Routes = [
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     ModalModule.forRoot(),
+    CollapseModule.forRoot(),
     Ng2SearchPipeModule,
     FormsModule,
     ChartsModule,

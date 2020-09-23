@@ -4,8 +4,16 @@ img {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 li {
   margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 425px) {
+
+  li {
+    font-size: 13px;
+  }
 }

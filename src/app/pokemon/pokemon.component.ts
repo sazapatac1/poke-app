@@ -20,7 +20,6 @@ import { AddPokemonAction } from '../actions/pokemon.actions';
   styleUrls: ['./pokemon.component.css'],
 })
 export class PokemonComponent implements OnInit {
-  @Input('pokemonId') pokemonId: number;
   @Input('pokemon') pokemon;
   pokemonImgUrl: string;
   pokemons: Pokemon[];
@@ -44,15 +43,15 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     // add image url to pokemon
-    this.pokemonImgUrl = this.pokemonService.addImgUrl(this.pokemonId);
+    this.pokemonImgUrl = this.pokemonService.addImgUrl(this.pokemon.id);
   }
 
   storePokemon() {
-    if (!this.pokemonService.isStored(this.pokemonId, this.pokemons)) {
-      this.httpService.getById(this.pokemonId).subscribe((response) => {
+    if (!this.pokemonService.isStored(this.pokemon.id, this.pokemons)) {
+      this.httpService.getById(this.pokemon.id).subscribe((response) => {
         this.pokemonStore.dispatch(
           new AddPokemonAction({
-            id: this.pokemonId,
+            id: this.pokemon.id,
             imgUrl: this.pokemonImgUrl,
             details: response,
           })
@@ -64,9 +63,9 @@ export class PokemonComponent implements OnInit {
   onClick() {
     this.storePokemon();
     if (this.comparisonInfo.isComparing) {
-      this.modalService.openModal(PokemonComparisonComponent, this.pokemonId);
+      this.modalService.openModal(PokemonComparisonComponent, this.pokemon.id);
     } else {
-      this.modalService.openModal(PokemonDetailComponent, this.pokemonId);
+      this.modalService.openModal(PokemonDetailComponent, this.pokemon.id);
     }
   }
 }
