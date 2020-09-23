@@ -1,0 +1,18 @@
+.card {
+  width: 200px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card h6 {
+  padding: 5px;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card:hover,
+.card-selected {
+  border: 3px solid orange;
+}

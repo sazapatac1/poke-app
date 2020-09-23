@@ -1,0 +1,4 @@
+<div [class.card-selected]="pokemonId===comparisonInfo.lastPokemonSelectedId" (click)="onClick()" class="card">
+  <img class="card-img-top" src="{{ pokemonImgUrl }}" alt="pokemon picture" />
+  <h6 class="card-text bg-light text-uppercase text-center">{{ pokemon.name }}</h6>
+</div>

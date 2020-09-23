@@ -1,0 +1,5 @@
+<div class="cards" (scroll)="scrollHandler($event)">
+  <div *ngFor="let pokemon of pokemons | filter: searchFilter; index as i">
+    <app-pokemon [pokemon]="pokemon" [pokemonId]="i + 1"></app-pokemon>
+  </div>
+</div>

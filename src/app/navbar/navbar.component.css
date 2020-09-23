@@ -1,0 +1,14 @@
+.alert-bg {
+  background-color: white;
+  color: orange;
+  padding-bottom: 2px;
+}
+
+.cancel-comparison {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.cancel-comparison h6:hover {
+  text-decoration: underline;
+}
